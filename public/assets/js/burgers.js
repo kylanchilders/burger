@@ -9,7 +9,7 @@ $(function() {
   
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: newDevoured
+        data: newDevouredState
       }).then(
         function() {
           location.reload();
@@ -22,7 +22,7 @@ $(function() {
   
       var newBurger = {
         burger_name: $("#ca").val().trim(),
-        devoured: $("[name=devoured]:checked").val().trim()
+        devoured: $("[burger_name=devoured]:checked").val().trim()
       };
   
       $.ajax("/api/burgers", {
